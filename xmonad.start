@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# gitit
+cd /home/ykashnikov/wiki
+/home/ykashnikov/.cabal/bin/gitit &
+cd $HOME
+# keys
+xrdb -merge .Xresources
+setxkbmap "us,ru" ",winkeys" "grp:shifts_toggle"
+xmodmap /home/ykashnikov/.xmodmap
+# environment
+urxvtd -q -o -f
+xsetroot -solid "#2d2d2d"    # Darker gray.
+nm-applet --sm-disable &
+sh -c "sleep 1 && gnome-power-manager" &
+#sh -c "sleep 31 && system-config-printer-applet > /dev/null 2> /dev/null" &
+update-notifier --startup-delay=60 &
+# go! 
+exec /home/ykashnikov/.cabal/bin/xmonad
