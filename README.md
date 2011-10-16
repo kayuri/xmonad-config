@@ -1,6 +1,6 @@
 # xmonad configuration
 
-xmonad(http://xmonad.org)
+http://xmonad.org
 
 ## Notes
 - based on default configuration 
